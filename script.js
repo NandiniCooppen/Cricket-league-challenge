@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
               }
           }, null, '-=1'); 
     } else {
-        console.log('Reduced motion detected. Disabling animations.');
+        // console.log('Reduced motion detected. Disabling animations.');
         const headerText = document.querySelector('header h1');
         const headerParagraph = document.querySelector('header p');
         const headerImage = document.querySelector('.header-image');
