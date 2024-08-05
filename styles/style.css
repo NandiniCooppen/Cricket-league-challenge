@@ -1,0 +1,363 @@
+/* Import reset.css */
+@import url('reset.css');
+
+/* Import variables.css */
+@import url('variables.css');
+
+
+body {
+    font-family: var(--font-family-text);
+    color: var(--color-text);
+    text-wrap: balance;
+    overflow-x: hidden;
+}
+
+/* Wrapper */
+.wrapper {
+    width: 100%;
+    max-width: 120rem;
+    padding: 0 var(--spacing);
+    margin: 0 auto;
+    display: grid;
+    gap: 3.25rem;
+}
+
+.wrapper > section {
+    width: 100%;
+}
+
+/* Header */
+header {
+    position: relative;
+    width: 100vw;
+    min-height: 72vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    overflow: hidden;
+    background-color: #222222;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/images/cricket-stadium.png') center/cover no-repeat;
+    opacity: 0;
+    transition: opacity 1.5s ease-out;
+    z-index: 1;
+    filter: brightness(0.8);
+}
+
+header.background-visible::before {
+    opacity: 1;
+}
+
+/* Header content */
+header h1, header p, header img.header-image {
+    z-index: 2;
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+header p {
+    font-weight: 800;
+    color: white;
+    width: 100%;
+    max-width: 47rem;
+    letter-spacing: 0.06rem;
+    line-height: 1.5;
+}
+
+/* button */
+.join-button {
+    background-color: var(--color-accent);
+    border: none;
+    color: white;
+    font-size: var(--font-size-p);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Animation for button appearance */
+.join-button.animate {
+    animation: pop-in 1s ease forwards;
+}
+
+@keyframes pop-in {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: var(--font-family-heading);
+    color: var(--color-primary);
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-h1);
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-h2);
+    color: var(--color-accent);
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-h3);
+}
+
+p, span {
+    font-size: var(--font-size-p);
+    font-weight: var(--font-weight-p);
+    line-height: 1.65;
+}
+
+.card {
+    background-color: #fff;
+}
+
+button {
+    background-color: var(--color-button-bg);
+}
+
+section {
+    margin: 5rem 0;
+}
+
+/* About Section */
+section#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: var(--spacing);
+}
+
+.about-content {
+    flex: 1;
+    max-width: 50%;
+    padding: 0 var(--spacing);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    section#about {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--spacing);
+    }
+    
+    .about-content,
+    .about-image {
+        max-width: 100%;
+    }
+    
+    .about-image {
+        margin-top: var(--spacing);
+        object-fit: contain;
+    }
+}
+
+/* Card Section  */
+/* Card Wrapper */
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+    justify-content: center; 
+}
+
+/* Individual Card Sections */
+.card-wrapper section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 30rem; 
+    height: 30rem; 
+    background-color: #fff;
+    box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing);
+    text-align: center;
+    transition: var(--transition-duration) ease all;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+
+/* Card Title */
+.card-wrapper section h2 {
+    font-size: 1.25rem;
+    color: var(--color-accent);
+    margin: var(--spacing) 0; 
+    transition: color var(--transition-duration);
+}
+
+/* Card Description */
+.card-wrapper section p {
+    font-size: 0.975rem;
+    line-height: 1.5;
+    color: var(--color-text);
+    margin: var(--spacing) 0;
+    transition: color var(--transition-duration);
+}
+
+/* Card Hover Effects */
+.card-wrapper section:hover {
+    background-color: var(--color-accent);
+    color: #fff;
+}
+
+.card-wrapper section:hover h2 {
+    color: #1D40BA;
+    font-weight: 600;
+}
+
+.card-wrapper section:hover p {
+    color: #fff;
+}
+
+/* Style for icons */
+.card-icon {
+    display: block;
+    width: 5rem; 
+    height: 5rem; 
+    margin: 0 auto 1rem; 
+}
+
+
+/* Season Schedule Section */
+section#schedule {
+    padding: 3rem 1rem; 
+    background-color: #f9f9f9; 
+    text-align: center; 
+    border-radius: var(--border-radius); 
+    box-shadow: 0 0.25rem 0.5rem var(--shadow-color); 
+}
+
+/* Schedule Heading */
+section#schedule h2 {
+    font-size: var(--font-size-h2); 
+    color: var(--color-primary); 
+    margin-bottom: 2rem; 
+    font-family: var(--font-family-heading); 
+}
+
+/* Schedule Description */
+section#schedule p {
+    font-size: var(--font-size-p); 
+    color: var(--color-text); 
+    line-height: 1.5; 
+    margin-bottom: 2rem; 
+    max-width: 50rem; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Schedule Liststyle */
+.schedule-list {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: var(--spacing); 
+}
+
+/* Schedule List Items */
+.schedule-list ul {
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    width: 100%; 
+    max-width: 40rem; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+/* Individual List Items */
+.schedule-list li {
+    font-size: var(--font-size-p); 
+    color: var(--color-text); 
+    padding: 1rem; 
+    border: 1px solid #ddd; 
+    margin-bottom: 0.5rem; 
+    border-radius: var(--border-radius); 
+    background-color: #fff; 
+    box-shadow: 0 0.25rem 0.5rem var(--shadow-color); 
+    transition: background-color var(--transition-duration), color var(--transition-duration); 
+}
+
+/* List Item Hover Effects */
+.schedule-list li:hover {
+    background-color: var(--color-accent); 
+    color: white; 
+}
+
+/* Schedule Image style */
+.schedule-list img.about-image {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: var(--border-radius); 
+    margin-top: 2rem; 
+    box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    section#schedule {
+        padding: 2rem 1rem; 
+    }
+    
+    .schedule-list ul {
+        max-width: 100%; 
+    }
+}
+
+/* Footer style */
+footer {
+    background-color: var( --color-primary); 
+    color: white; 
+    text-align: center; 
+    padding: 2rem; 
+    font-family: var(--font-family-text); 
+    margin-top: 3rem; 
+}
+
+footer p {
+    margin: 0.5rem 0; 
+    font-size: var(--font-size-p); 
+}
+
+
+
+
+
+
+

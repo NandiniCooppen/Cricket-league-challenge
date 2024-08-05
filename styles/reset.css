@@ -1,0 +1,41 @@
+/* reset.css */
+
+/* Universal Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Optional: You may want to ensure font inheritance or set default styles */
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Reset specific elements to maintain accessibility and consistency */
+body, html {
+    height: 100%;
+    font-size: 100%;
+    font-family: sans-serif;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
