@@ -1,5 +1,4 @@
 /* reset.css */
-
 /* Universal Reset */
 *,
 *::before,
@@ -7,7 +6,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Optional: You may want to ensure font inheritance or set default styles */
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
